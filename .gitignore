@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+out/
+demo-output/
+private-data/
+*.sqlite
+*.sqlite3
+*.db

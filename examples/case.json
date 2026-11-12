@@ -1,0 +1,34 @@
+{
+  "tenant_id": "DEMO-TENANT",
+  "customer_id": "DEMO-CUSTOMER",
+  "message_id": "DEMO-mail-001",
+  "source_sha256": "8aa083d020fc236e267723f3aa73574e5eb772d5f17921486c72dee103b45764",
+  "issues": [],
+  "lines": [
+    {
+      "line_id": "L1",
+      "customer_part": "C-001",
+      "revision": "A",
+      "unit": "PCS",
+      "quantity": "500",
+      "evidence": {
+        "customer_part": {
+          "source": "DEMO-mail-001",
+          "locator": "attachment.xlsx / 詢價 / row 2"
+        },
+        "revision": {
+          "source": "DEMO-mail-001",
+          "locator": "attachment.xlsx / 詢價 / row 2"
+        },
+        "unit": {
+          "source": "DEMO-mail-001",
+          "locator": "attachment.xlsx / 詢價 / row 2"
+        },
+        "quantity": {
+          "source": "DEMO-mail-001",
+          "locator": "attachment.xlsx / 詢價 / row 2"
+        }
+      }
+    }
+  ]
+}

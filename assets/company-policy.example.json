@@ -1,0 +1,9 @@
+{
+  "approved_policy_id": null,
+  "target_margin": "0.20",
+  "minimum_margin": "0.15",
+  "unit_price_places": 2,
+  "amount_places": 0,
+  "required_roles": ["sales", "supply"],
+  "note": "示範設定；approved_policy_id 未設定會阻擋。公司須核定稅務、門檻、角色與例外機制。"
+}

@@ -1,0 +1,44 @@
+name: Run RFQ batch
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'demo = fixed fictional example; batch = current-date quote and optional PO check'
+        type: choice
+        options:
+          - demo
+          - batch
+        default: demo
+      case_directory:
+        description: 'Repo-relative data directory (prototype: non-sensitive fixtures only)'
+        type: string
+        default: examples
+permissions:
+  contents: read
+concurrency:
+  group: rfq-batch-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  batch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run without printing commercial data
+        env:
+          RFQ_MODE: ${{ inputs.mode }}
+          RFQ_CASE_DIR: ${{ inputs.case_directory }}
+        run: python3 scripts/run_batch.py --mode "$RFQ_MODE" --case-dir "$RFQ_CASE_DIR" --output-dir out
+      - name: Save reports even when review is required
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: rfq-output-${{ github.run_id }}-${{ github.run_attempt }}
+          path: out/
+          if-no-files-found: ignore
+          retention-days: 1

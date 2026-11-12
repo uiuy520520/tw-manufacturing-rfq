@@ -1,0 +1,12 @@
+[
+  {
+    "internal_part": "P-001",
+    "revision": "A",
+    "unit": "PCS",
+    "customer_parts": {
+      "DEMO-CUSTOMER": [
+        "C-001"
+      ]
+    }
+  }
+]

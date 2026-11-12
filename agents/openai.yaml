@@ -1,0 +1,4 @@
+interface:
+  display_name: "台灣製造業詢報價助手"
+  short_description: "整理詢價、精確計價、核對採購單並保留審核依據"
+  default_prompt: "使用 $tw-manufacturing-rfq 整理詢價、檢查缺漏並產生可審核的報價草稿；缺少資料時先完成可做的部分。"
